@@ -6,7 +6,21 @@
 	功能：消息基类
 *****************************************************/
 using System;
-using System.Web.Script.Serialization;
+//using System.Web.Script.Serialization;
+using UnityEngine;
+
+public class JavaScriptSerializerEx {
+
+    public string Serialize(MsgBase msgBase) {
+        return JsonUtility.ToJson(msgBase);
+    }
+
+    public  MsgBase Deserialize(string str, Type type)
+    {
+        return (MsgBase)JsonUtility.FromJson(str,type);
+    }
+
+}
 
 
 public class MsgBase
@@ -14,7 +28,7 @@ public class MsgBase
     //协议名称
     public string protoName = "null";
 
-    static JavaScriptSerializer Js = new JavaScriptSerializer();
+    static JavaScriptSerializerEx Js = new JavaScriptSerializerEx();
 
     /// <summary>
     /// 编码
