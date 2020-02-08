@@ -16,6 +16,7 @@ public class MsgGetAchieve : MsgBase
 }
 
 //房间信息
+[System.Serializable]
 public class RoomInfo
 {
     public int id = 0;      //房间id
@@ -52,6 +53,7 @@ public class MsgEnterRoom : MsgBase
 
 
 //玩家信息
+[System.Serializable]
 public class PlayerInfo
 {
     public string id = "lpy";   //账号
