@@ -19,9 +19,10 @@ public class GameMain : MonoBehaviour
         NetManager.AddEventListener(NetManager.NetEvent.Close, OnConnectClose);
         NetManager.AddMsgListener("MsgKick",OnMsgKick);
         //初始化
-
-        //登陆
-
+        PanelManager.Init();
+        BattleManager.Init();
+        //打开登陆面板
+        PanelManager.Open<LoginPanel>();
     }
 
 
@@ -37,8 +38,9 @@ public class GameMain : MonoBehaviour
 
 
     //被踢下线
-    private void OnMsgKick(MsgBase msgBase) {
-        // todo
+    void OnMsgKick(MsgBase msgBase)
+    {
+        PanelManager.Open<TipPanel>("被踢下线");
     }
 
 }
