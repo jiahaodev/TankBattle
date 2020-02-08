@@ -30,7 +30,7 @@ public class PanelManager
     //初始化
     public static void Init()
     {
-        root = GameObject.Find("root").transform;
+        root = GameObject.Find("Root").transform;
         canvas = root.Find("Canvas");
         Transform panel = canvas.Find("Panel");
         Transform tip = canvas.Find("Tip");
